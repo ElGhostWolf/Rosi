@@ -9,19 +9,54 @@
             background-color: #ffeb3b;
             text-align: center;
             font-family: Arial, sans-serif;
+            padding: 20px;
         }
         h1 {
             color: #f57f20;
         }
+        .flower {
+            width: 50px;
+            height: auto;
+        }
+        .clickable {
+            color: #f57f20;
+            text-decoration: underline;
+            cursor: pointer;
+            margin: 10px;
+        }
+        .gallery {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
         img {
             max-width: 300px;
             height: auto;
+            display: none;
+            margin-top: 10px;
         }
     </style>
 </head>
 <body>
     <h1>Girasoles para Mi Novia</h1>
     <p>Los girasoles son un símbolo de amor y felicidad.</p>
-    <img src="https://i.pinimg.com/564x/83/04/5b/83045b6e70d4eb87f78b4e128c10a99c.jpg" alt="Girasoles">
+    
+    <div class="gallery">
+        <span class="clickable" onclick="showImage('image1')">Click aquí para ver un girasol 1</span>
+        <img id="image1" src="https://i.pinimg.com/564x/83/04/5b/83045b6e70d4eb87f78b4e128c10a99c.jpg" alt="Girasol 1">
+        
+        <span class="clickable" onclick="showImage('image2')">Click aquí para ver un girasol 2</span>
+        <img id="image2" src="URL_DE_IMAGEN_GIRASOL2" alt="Girasol 2">
+        
+        <span class="clickable" onclick="showImage('image3')">Click aquí para ver un girasol 3</span>
+        <img id="image3" src="URL_DE_IMAGEN_GIRASOL3" alt="Girasol 3">
+    </div>
+
+    <script>
+        function showImage(id) {
+            const img = document.getElementById(id);
+            img.style.display = img.style.display === 'none' || img.style.display === '' ? 'block' : 'none';
+        }
+    </script>
 </body>
 </html>
