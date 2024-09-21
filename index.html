@@ -3,60 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Girasoles para Ti</title>
+    <title>Girasoles para Mi Amor</title>
     <style>
         body {
-            background-color: #ffeb3b;
+            background-color: #fff8dc;
             text-align: center;
-            font-family: Arial, sans-serif;
-            padding: 20px;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
         }
         h1 {
             color: #f57f20;
+            font-size: 2.5em;
+            margin-top: 20px;
+        }
+        p {
+            color: #8b4513;
+            font-size: 1.5em;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .message {
+            background-color: #ffe4b5;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .button-container {
+            margin: 30px 0;
+        }
+        .button {
+            background-color: #f57f20;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .button:hover {
+            background-color: #ff8c00;
         }
         .flower {
-            width: 50px;
+            width: 60px;
             height: auto;
+            margin: 5px;
         }
-        .clickable {
-            color: #f57f20;
-            text-decoration: underline;
-            cursor: pointer;
-            margin: 10px;
-        }
-        .gallery {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
+        .image-container {
+            display: none;
+            margin-top: 20px;
         }
         img {
-            max-width: 300px;
+            max-width: 100%;
             height: auto;
-            display: none;
-            margin-top: 10px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
     </style>
 </head>
 <body>
-    <h1>Girasoles para Mi Novia</h1>
-    <p>Los girasoles son un símbolo de amor y felicidad.</p>
-    
-    <div class="gallery">
-        <span class="clickable" onclick="showImage('image1')">Click aquí para ver un girasol 1</span>
-        <img id="image1" src="https://i.pinimg.com/564x/83/04/5b/83045b6e70d4eb87f78b4e128c10a99c.jpg" alt="Girasol 1">
-        
-        <span class="clickable" onclick="showImage('image2')">Click aquí para ver un girasol 2</span>
-        <img id="image2" src="URL_DE_IMAGEN_GIRASOL2" alt="Girasol 2">
-        
-        <span class="clickable" onclick="showImage('image3')">Click aquí para ver un girasol 3</span>
-        <img id="image3" src="URL_DE_IMAGEN_GIRASOL3" alt="Girasol 3">
+
+    <div class="container">
+        <h1>🌻 Girasoles para Mi Rosalis Hermosa 🌻</h1>
+        <div class="message">
+            <p>Te amo mucho, mi amor. Aunque no pude darte los girasoles de verdad, aquí tienes unos virtuales llenos de todo mi cariño.</p>
+            <img src="https://i.pinimg.com/564x/83/04/5b/83045b6e70d4eb87f78b4e128c10a99c.jpg" alt="Pequeño girasol" class="flower">
+            <img src="https://i.pinimg.com/564x/83/04/5b/83045b6e70d4eb87f78b4e128c10a99c.jpg" alt="Pequeño girasol" class="flower">
+            <img src="https://i.pinimg.com/564x/83/04/5b/83045b6e70d4eb87f78b4e128c10a99c.jpg" alt="Pequeño girasol" class="flower">
+        </div>
+
+        <div class="button-container">
+            <button class="button" onclick="showImage()">Click aquí para ver la sorpresa 🌻</button>
+        </div>
+
+        <div class="image-container" id="imageContainer">
+            <p>No se pudieron los de verdad, pero aquí te dejo esta foto hermosa de girasoles 🌻🌻</p>
+            <img src="https://i.pinimg.com/564x/83/04/5b/83045b6e70d4eb87f78b4e128c10a99c.jpg" alt="Girasol grande">
+        </div>
     </div>
 
     <script>
-        function showImage(id) {
-            const img = document.getElementById(id);
-            img.style.display = img.style.display === 'none' || img.style.display === '' ? 'block' : 'none';
+        function showImage() {
+            const imageContainer = document.getElementById('imageContainer');
+            imageContainer.style.display = 'block';
         }
     </script>
+
 </body>
 </html>
+
