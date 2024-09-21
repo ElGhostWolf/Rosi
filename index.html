@@ -85,20 +85,21 @@
             <p id="imageMessage" style="display:none;">No se pudieron los de verdad, pero aquí te dejo esta foto hermosa de girasoles 🌻🌻</p>
             <img id="image1" src="https://i.pinimg.com/564x/83/04/5b/83045b6e70d4eb87f78b4e128c10a99c.jpg" alt="Girasol grande" style="display:none;">
             <img id="image2" src="https://i.pinimg.com/564x/23/ba/14/23ba140f83d9f1fd724158da0dfbccc6.jpg" alt="Girasol grande" style="display:none;">
+            <img id="image3" src="https://i.pinimg.com/564x/1a/35/55/1a3555b55a2ecf7f217cabc80dbc57bb.jpg" alt="Girasol grande" style="display:none;">
         </div>
     </div>
 
     <script>
         let currentImage = 0;
-        const images = ['image1', 'image2'];
+        const images = ['image1', 'image2', 'image3'];
         const imageMessage = document.getElementById('imageMessage');
-        
+
         function showNextImage() {
             if (currentImage < images.length) {
                 const imageId = images[currentImage];
                 document.getElementById(imageId).style.display = 'block';
                 currentImage++;
-                
+
                 if (currentImage === images.length) {
                     imageMessage.style.display = 'block';
                     document.querySelector('.button-container').style.display = 'none'; // Oculta el botón al final
