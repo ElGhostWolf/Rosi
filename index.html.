@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Girasoles para Ti</title>
+    <style>
+        body {
+            background-color: #ffeb3b;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            color: #f57f20;
+        }
+        img {
+            max-width: 300px;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Girasoles para Mi Novia</h1>
+    <p>Los girasoles son un símbolo de amor y felicidad.</p>
+    <img src="https://www.pinterest.com/pin/3588874695780315/" alt="Girasoles">
+</body>
+</html>
