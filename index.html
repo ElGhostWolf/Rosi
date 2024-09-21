@@ -4,28 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Girasoles para Mi Amor</title>
-
-    <!-- Google Fonts para tipografía vintage -->
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
-
     <style>
         body {
             background-color: #fff8dc;
-            background-image: url('https://i.pinimg.com/564x/1a/35/55/1a3555b55a2ecf7f217cabc80dbc57bb.jpg');
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-position: center;
             text-align: center;
-            font-family: 'Cinzel', serif;
+            font-family: 'Arial', sans-serif;
             margin: 0;
-            padding: 20px;
+            padding: 0;
         }
         h1 {
             color: #f57f20;
-            font-size: 2.8em;
+            font-size: 2.5em;
             margin-top: 20px;
-            text-transform: uppercase;
-            letter-spacing: 3px;
         }
         p {
             color: #8b4513;
@@ -35,9 +25,6 @@
             max-width: 800px;
             margin: 0 auto;
             padding: 20px;
-            background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco semitransparente */
-            border-radius: 15px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
         .message {
             background-color: #ffe4b5;
@@ -58,7 +45,6 @@
             font-size: 1.2em;
             cursor: pointer;
             transition: background-color 0.3s ease;
-            font-family: 'Cinzel', serif;
         }
         .button:hover {
             background-color: #ff8c00;
@@ -73,10 +59,9 @@
             margin-top: 20px;
         }
         img {
-            max-width: 90%; /* Reducimos el tamaño máximo para que no se salga del contenedor */
+            max-width: 100%;
             height: auto;
             border-radius: 15px;
-            margin: 20px 0;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
     </style>
@@ -87,16 +72,19 @@
         <h1>🌻 Girasoles para Mi Rosalis Hermosa 🌻</h1>
         <div class="message">
             <p>Te amo mucho, mi amor. Aunque no pude darte los girasoles de verdad, aquí tienes unos virtuales llenos de todo mi cariño.</p>
+            <img src="https://i.pinimg.com/564x/83/04/5b/83045b6e70d4eb87f78b4e128c10a99c.jpg" alt="Pequeño girasol" class="flower">
+            <img src="https://i.pinimg.com/564x/83/04/5b/83045b6e70d4eb87f78b4e128c10a99c.jpg" alt="Pequeño girasol" class="flower">
+            <img src="https://i.pinimg.com/564x/83/04/5b/83045b6e70d4eb87f78b4e128c10a99c.jpg" alt="Pequeño girasol" class="flower">
         </div>
 
         <div class="button-container">
-            <button class="button" id="nextButton" onclick="showNextImage()">Siguiente 🌻</button>
+            <button class="button" onclick="showNextImage()">Siguiente 🌻</button>
         </div>
 
         <div class="image-container" id="imageContainer">
-            <img id="image1" src="https://i.pinimg.com/564x/83/04/5b/83045b6e70d4eb87f78b4e128c10a99c.jpg" alt="Girasol 1" style="display:none;">
-            <img id="image2" src="https://i.pinimg.com/564x/23/ba/14/23ba140f83d9f1fd724158da0dfbccc6.jpg" alt="Girasol 2" style="display:none;">
             <p id="imageMessage" style="display:none;">No se pudieron los de verdad, pero aquí te dejo esta foto hermosa de girasoles 🌻🌻</p>
+            <img id="image1" src="https://i.pinimg.com/564x/83/04/5b/83045b6e70d4eb87f78b4e128c10a99c.jpg" alt="Girasol grande" style="display:none;">
+            <img id="image2" src="https://i.pinimg.com/564x/23/ba/14/23ba140f83d9f1fd724158da0dfbccc6.jpg" alt="Girasol grande" style="display:none;">
         </div>
     </div>
 
@@ -107,15 +95,13 @@
         
         function showNextImage() {
             if (currentImage < images.length) {
-                // Mostrar la siguiente imagen
                 const imageId = images[currentImage];
                 document.getElementById(imageId).style.display = 'block';
                 currentImage++;
                 
-                // Si se mostró la última imagen, mostrar el mensaje final
                 if (currentImage === images.length) {
                     imageMessage.style.display = 'block';
-                    document.getElementById('nextButton').style.display = 'none'; // Ocultar el botón al final
+                    document.querySelector('.button-container').style.display = 'none'; // Oculta el botón al final
                 }
             }
         }
