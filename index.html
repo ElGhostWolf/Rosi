@@ -72,25 +72,38 @@
         <h1>🌻 Girasoles para Mi Rosalis Hermosa 🌻</h1>
         <div class="message">
             <p>Te amo mucho, mi amor. Aunque no pude darte los girasoles de verdad, aquí tienes unos virtuales llenos de todo mi cariño.</p>
-            <img src="https://i.pinimg.com/564x/83/04/5b/83045b6e70d4eb87f78b4e128c10a99c.jpg" alt="Pequeño girasol" class="flower">
-            <img src="https://i.pinimg.com/564x/83/04/5b/83045b6e70d4eb87f78b4e128c10a99c.jpg" alt="Pequeño girasol" class="flower">
-            <img src="https://i.pinimg.com/564x/83/04/5b/83045b6e70d4eb87f78b4e128c10a99c.jpg" alt="Pequeño girasol" class="flower">
         </div>
 
         <div class="button-container">
-            <button class="button" onclick="showImage()">Click aquí para ver la sorpresa 🌻</button>
+            <button class="button" id="nextButton" onclick="showNextImage()">Siguiente 🌻</button>
         </div>
 
         <div class="image-container" id="imageContainer">
-            <p>No se pudieron los de verdad, pero aquí te dejo esta foto hermosa de girasoles 🌻🌻</p>
-            <img src="https://i.pinimg.com/564x/83/04/5b/83045b6e70d4eb87f78b4e128c10a99c.jpg" alt="Girasol grande">
+            <img id="image1" src="https://i.pinimg.com/564x/83/04/5b/83045b6e70d4eb87f78b4e128c10a99c.jpg" alt="Girasol 1" style="display:none;">
+            <img id="image2" src="https://i.pinimg.com/564x/83/04/5b/83045b6e70d4eb87f78b4e128c10a99c.jpg" alt="Girasol 2" style="display:none;">
+            <img id="image3" src="https://i.pinimg.com/564x/83/04/5b/83045b6e70d4eb87f78b4e128c10a99c.jpg" alt="Girasol 3" style="display:none;">
+            <p id="imageMessage" style="display:none;">No se pudieron los de verdad, pero aquí te dejo esta foto hermosa de girasoles 🌻🌻</p>
         </div>
     </div>
 
     <script>
-        function showImage() {
-            const imageContainer = document.getElementById('imageContainer');
-            imageContainer.style.display = 'block';
+        let currentImage = 0;
+        const images = ['image1', 'image2', 'image3'];
+        const imageMessage = document.getElementById('imageMessage');
+        
+        function showNextImage() {
+            if (currentImage < images.length) {
+                // Mostrar la siguiente imagen
+                const imageId = images[currentImage];
+                document.getElementById(imageId).style.display = 'block';
+                currentImage++;
+                
+                // Si se mostró la última imagen, mostrar el mensaje final
+                if (currentImage === images.length) {
+                    imageMessage.style.display = 'block';
+                    document.getElementById('nextButton').style.display = 'none'; // Ocultar el botón al final
+                }
+            }
         }
     </script>
 
