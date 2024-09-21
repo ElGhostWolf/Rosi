@@ -1,24 +1,12 @@
-const images = ['images/imagen1.jpg', 'images/imagen2.jpg', 'images/imagen3.jpg'];
-const dots = document.querySelectorAll('.dot');
-const imgElement = document.querySelector('.image-container img');
+const mensajeInicial = document.getElementById('mensaje-inicial');
+const botonMostrar = document.getElementById('mostrar-imagenes');
+const imageContainer = document.querySelector('.image-container');
+const images = document.querySelectorAll('.image');
+const descripcion = document.querySelector('.image-description');
 
-let currentImageIndex = 0;
-
-function showImage(index) {
-    imgElement.src = images[index];
-    imgElement.classList.remove('active');
-    void imgElement.offsetWidth; // Trigger reflow for transition
-    imgElement.classList.add('active');
-
-    // Actualizar los puntos
-    dots.forEach((dot, i) => {
-        dot.classList.remove('active');
-    });
-    dots[index].classList.add('active');
-}
-
-dots.forEach((dot, index) => {
-    dot.addEventListener('click', () => {
-        showImage(index);
-    });
+botonMostrar.addEventListener('click', () => {
+    mensajeInicial.classList.add('hidden');
+    botonMostrar.classList.add('hidden');
+    imageContainer.classList.remove('hidden');
+    descripcion.classList.remove('hidden');
 });
